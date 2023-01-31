@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eux
+pushd ~/.dotfiles
+nix build .#homeManagerConfigurations.zack.activationPackage
+./result/activate
+popd
