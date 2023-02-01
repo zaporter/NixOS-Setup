@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eux
-pushd ~/.dotfiles
+pushd ~/setup
 nix build .#homeManagerConfigurations.zack.activationPackage
 ./result/activate
 popd

@@ -160,8 +160,7 @@ in
     wl-clipboard # wl-copy and wl-paste from stdin/stdout
     bemenu # wayland for dmenu
     mako # notification system
-    xdg-desktop-portal-gtk
-  #  wget
+    xdg-desktop-portal-gtk #  wget
   ];
   # enable sway window manager
   programs.sway = {
@@ -180,9 +179,10 @@ in
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    #gtk.enable = true;
     # gtk portal needed to make gtk apps happy
     #extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    #extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
 
