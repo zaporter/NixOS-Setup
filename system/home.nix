@@ -6,10 +6,10 @@
   home.username = "zack";
   home.homeDirectory = "/home/zack";
   home.packages = with pkgs; [ 
- #   pithos
+    pithos
     alacritty
     signal-desktop
-    gdk-pixbuf
+ #   gdk-pixbuf
    # git
     git-crypt
     gnupg
