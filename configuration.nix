@@ -128,12 +128,10 @@ in
   users.users.zack = {
     isNormalUser = true;
     description = "Zack";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers"];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers" "video"];
   };
+  # enable brightness controls
+  programs.light.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
   # Allow unfree packages

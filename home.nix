@@ -8,16 +8,6 @@
   # paths it should manage.
   home.username = "zack";
   home.homeDirectory = "/home/zack";
-  home.packages = with pkgs; [ 
-    pithos
-    calc
-    alacritty
-    signal-desktop
- #   gdk-pixbuf
-   # git
-    git-crypt
-    gnupg
-  ];
   programs.git = {
     enable = true;      
     # Additional options for the git program
