@@ -15,6 +15,7 @@
     # system
     acpi # to read battery %
     pythonFull 
+    pulseaudio # pulse ctl
     # graphics
     i3status
     zip
