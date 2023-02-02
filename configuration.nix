@@ -128,12 +128,13 @@ in
   users.users.zack = {
     isNormalUser = true;
     description = "Zack";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers"];
     packages = with pkgs; [
       firefox
     #  thunderbird
     ];
   };
+  virtualisation.virtualbox.host.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

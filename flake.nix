@@ -18,7 +18,7 @@
       zack = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
-          ./system/home.nix
+          ./home.nix
           {
             home = {
               username = "zack";
@@ -33,7 +33,7 @@
       nixos = lib.nixosSystem {
         inherit system;
         modules = [
-          ./system/configuration.nix
+          ./configuration.nix
         ];
       };
     };

@@ -1,12 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./packages.nix
+  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "zack";
   home.homeDirectory = "/home/zack";
   home.packages = with pkgs; [ 
     pithos
+    calc
     alacritty
     signal-desktop
  #   gdk-pixbuf
