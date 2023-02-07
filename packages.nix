@@ -5,11 +5,16 @@
   imports = [
     ./alacritty/config.nix
     ./sway/config.nix
+    ./nvim/config.nix
+    ./i3status/config.nix
+    ./xkb/config.nix
+    ./moonlander/config.nix
   ];
 
   home.packages = with pkgs; [ 
     # core
     firefox
+    bitwarden
     # utils
     wev
     # system
@@ -17,7 +22,6 @@
     pythonFull 
     pulseaudio # pulse ctl
     # graphics
-    i3status
     zip
     
     unzip
@@ -27,7 +31,6 @@
     fd # alternative to find
     exa # alternative to ls
 
-    pithos
     calc
     alacritty
     signal-desktop

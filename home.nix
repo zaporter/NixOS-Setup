@@ -27,6 +27,12 @@
     vimAlias = true;
  #   defaultEditor = true;
   };
+# Home Manager setup
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+    XDG_CURRENT_DESKTOP = "sway"; 
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

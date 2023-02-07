@@ -51,6 +51,19 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  # Printing
+  
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cnijfilter2 ];
+
+  nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem
+    pkg.pname [
+      "cnijfilter2"
+    ]
+  );
+
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,6 +98,13 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+      fira-code
+    ];
+    fontDir.enable = true;
+  };
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -99,7 +119,6 @@ in
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable Polkit for system-wide privileges
   security.polkit.enable = true;
@@ -182,6 +201,7 @@ in
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    gtkUsePortal = true;
     #gtk.enable = true;
     # gtk portal needed to make gtk apps happy
     #extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
