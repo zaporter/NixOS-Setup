@@ -1,5 +1,8 @@
 {config, pkgs, ...}:
 {
+xdg.configFile."zsh/env".text = ''
+  ${builtins.readFile ./env}
+'';
 programs.zsh = {
   enable = true;
   shellAliases = {

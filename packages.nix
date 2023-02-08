@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [ 
     # core
+    bitwarden-cli
     firefox
     openvpn
     bitwarden

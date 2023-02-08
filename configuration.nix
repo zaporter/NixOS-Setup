@@ -150,6 +150,9 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Zack";
+    openssh.authorizedKeys.keyFiles = [
+      /etc/nixos/ssh/authorized_keys
+    ];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers" "video"];
   };
   # enable brightness controls
