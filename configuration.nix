@@ -63,6 +63,7 @@ in
     ]
   );
 
+  programs.zsh.enable = true;
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
@@ -147,6 +148,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zack = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "Zack";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers" "video"];
   };

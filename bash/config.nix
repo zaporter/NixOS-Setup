@@ -4,7 +4,11 @@
   home.packages = [
     pkgs.alacritty
   ];
-  xdg.home.".bash_profile".text = ''
-  zsh
+  home.file.".bash_profile".text = ''
+  source ~/.bashrc
+  '';
+  home.file.".bashrc".text = ''
+  #export SHELL=`/usr/bin/env zsh`
+  #[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l 
   '';
 }
