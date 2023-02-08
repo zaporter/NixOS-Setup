@@ -158,6 +158,7 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  services.udev.packages = [pkgs.zsa-udev-rules];
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git vim curl wget

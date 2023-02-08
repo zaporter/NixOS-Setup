@@ -3,6 +3,7 @@
 {
   home.extraOutputsToInstall = [ "doc" "info" "man" "devdoc" ];
   imports = [
+    ./zsh/config.nix
     ./alacritty/config.nix
     ./sway/config.nix
     ./nvim/config.nix
@@ -14,6 +15,7 @@
   home.packages = with pkgs; [ 
     # core
     firefox
+    openvpn
     bitwarden
     # utils
     wev
