@@ -3,7 +3,7 @@
 {
   home.extraOutputsToInstall = [ "doc" "info" "man" "devdoc" ];
   imports = [
-    ./bash/config.nix
+    ./rofi/config.nix
     ./zsh/config.nix
     ./alacritty/config.nix
     ./sway/config.nix
@@ -24,6 +24,7 @@
     acpi # to read battery %
     pythonFull 
     pulseaudio # pulse ctl
+    playerctl
     # graphics
     zip
     
