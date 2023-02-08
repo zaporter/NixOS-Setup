@@ -1,8 +1,13 @@
+{config, pkgs, ...}:
+{
 programs.zsh = {
   enable = true;
   shellAliases = {
   #  ll = "ls -l";
   #  update = "sudo nixos-rebuild switch";
+    ls = "exa";
+    update-home = "~/setup/scripts/Switch-home";
+    update-nixos = "~/setup/scripts/Switch-nixos";
   };
   history = {
     size = 10000;
@@ -10,8 +15,9 @@ programs.zsh = {
   };
   oh-my-zsh = {
     enable = true;
-    plugins = [ "git" "thefuck" ];
+    plugins = [ "git" "z" ];
     theme = "robbyrussell";
   };
 };
+}
 
