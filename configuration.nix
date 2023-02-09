@@ -56,6 +56,9 @@ in
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
 
+  environment.sessionVariables = rec {
+    WLR_DRM_NO_MODIFIERS = "1";
+  };
 
   nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem
     pkg.pname [
@@ -150,9 +153,9 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Zack";
-    openssh.authorizedKeys.keyFiles = [
-      /etc/nixos/ssh/authorized_keys
-    ];
+    #openssh.authorizedKeys.keyFiles = [
+    #  /etc/nixos/ssh/authorized_keys
+    #];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers" "video"];
   };
   # enable brightness controls
@@ -208,7 +211,6 @@ in
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    gtkUsePortal = true;
     #gtk.enable = true;
     # gtk portal needed to make gtk apps happy
     #extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
