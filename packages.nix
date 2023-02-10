@@ -15,8 +15,11 @@
 
   home.packages = with pkgs; [ 
     # core
+    lshw
     bitwarden-cli
+    wdisplays
     firefox
+    chromium
     openvpn
     bitwarden
     # utils
@@ -28,6 +31,7 @@
     playerctl
     # graphics
     zip
+    htop
     
     unzip
     gnumake
