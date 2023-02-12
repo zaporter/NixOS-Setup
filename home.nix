@@ -22,11 +22,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
- #   defaultEditor = true;
-  };
 # Home Manager setup
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 1;

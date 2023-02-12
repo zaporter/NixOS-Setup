@@ -120,8 +120,6 @@ in
     ];
     fontDir.enable = true;
   };
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -129,8 +127,18 @@ in
 
   # Configure keymap in X11
   services.xserver = {
+    enable = true;
     layout = "us";
     xkbVariant = "";
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu #application launcher most people use
+        i3status # gives you the default i3 status bar
+        i3lock #default i3 screen locker
+        i3blocks #if you are planning on using i3blocks over i3status
+     ];
+     };
   };
 
   # Enable CUPS to print documents.
@@ -168,6 +176,11 @@ in
     #];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "vboxusers" "video"];
   };
+  # https://gist.github.com/Strum355/8e0c63d662f297ce23654e763bd4c6af
+  nixpkgs.overlays = [
+    (import ./electron/wayland-overlay.nix)
+    #(import ./discord/wayland-overlay.nix)
+  ];
   # enable brightness controls
   programs.light.enable = true;
   virtualisation.virtualbox.host.enable = true;
@@ -188,8 +201,10 @@ in
     gdk-pixbuf-xlib
     alacritty
     sway
+    i3
     dbus-sway-environment
     configure-gtk
+    discord
     wayland
     xdg-utils # for opening default programs when clicking links
     glib # gsettings

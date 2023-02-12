@@ -1,10 +1,22 @@
-{pkgs, ...}:
+{config, pkgs, lib, ...}:
 
-{
-  home.packages = [
-    #nvim is installed by configuration.nix
-  ];
-  xdg.configFile."nvim/init.lua".text = ''
-    ${builtins.readFile ./init.lua}
-  '';
+with lib; {
+  config = {
+    programs.neovim = {
+      enable = true;
+      #defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      extraConfig = ''
+        :luafile ~/.config/nvim/custom/init.lua
+      '';
+      };
+
+    xdg.configFile.nvim = {
+      source = ./config;
+      recursive = true;
+    };
+  };
+
 }
