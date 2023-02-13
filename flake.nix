@@ -32,12 +32,26 @@
           ./home/trantor.nix
         ];
       };
+      "zack@helicon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/helicon.nix
+        ];
+      };
+      
     };
     nixosConfigurations = {
       trantor = lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/trantor
+        ];
+      };
+      helicon = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/helicon
         ];
       };
     };
