@@ -1,0 +1,5 @@
+key_bindings:
+  - { key: V,        mods: Control, action: Paste                  }
+  - { key: V,        mods: Control|Shift, chars: "\x16"            }
+  - { key: C,        mods: Control, action: Copy                   }
+  - { key: C,        mods: Control|Shift, chars: "\x03"         }
