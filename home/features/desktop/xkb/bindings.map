@@ -1,0 +1,63 @@
+
+
+! Navigation
+
+keysym h = h H Left Left Home Home  
+keysym j = j J Down Down NoSymbol NoSymbol
+keysym k = k K Up Up NoSymbol NoSymbol
+keysym l = l L Right Right lstroke Lstroke
+!keysym equal = equal plus plus NoSymbol NoSymbol
+!keysym minus = minus underscore underscore NoSymbol NoSymbol
+
+! GENRIC KEYS
+
+keysym semicolon = semicolon colon BackSpace NoSymbol NoSymbol NoSymbol
+
+keysym e = e E equal NoSymbol NoSymbol
+keysym q = q Q exclam NoSymbol NoSymbol
+keysym p = p P plus NoSymbol NoSymbol
+keysym d = d D parenleft Control_L NoSymbol
+keysym f = f F parenright NoSymbol NoSymbol
+keysym m = m M minus NoSymbol NoSymbol
+keysym x = x X braceleft NoSymbol NoSymbol
+keysym c = c C braceright NoSymbol NoSymbol
+keysym z = z Z Escape NoSymbol NoSymbol
+
+! HOME PG DOWN PG UP END
+
+keysym u = u U underscore Next NoSymbol
+keysym y = y Y NoSymbol Home NoSymbol
+keysym i = i I colon Prior NoSymbol
+keysym o = o O NoSymbol End NoSymbol
+! keysym BackSpace = NoSymbol NoSymbol NoSymbol NoSymbol
+
+! PUNCTUATION
+
+keysym period = period greater greater NoSymbol NoSymbol
+keysym comma = comma less less NoSymbol NoSymbol
+keysym slash = slash question question NoSymbol NoSymbol
+keysym apostrophe = apostrophe quotedbl quotedbl NoSymbol NoSymbol
+
+! BRACKETS
+
+keysym bracketleft = bracketleft braceleft braceleft NoSymbol NoSymbol
+keysym bracketright = bracketright braceright braceright NoSymbol NoSymbol
+keysym backslash = backslash bar bar NoSymbol NoSymbol
+
+! NUMBER KEYS
+
+keysym 0x30 = 0 parenright parenright NoSymbol NoSymbol
+keysym 0x39 = 9 parenleft parenleft NoSymbol NoSymbol
+keysym 0x38 = 8 asterisk asterisk NoSymbol NoSymbol
+keysym 0x37 = 7 ampersand ampersand NoSymbol NoSymbol
+keysym 0x36 = 6 asciicircum asciicircum NoSymbol NoSymbol
+keysym 0x35 = 5 percent percent NoSymbol NoSymbol
+keysym 0x34 = 4 dollar dollar NoSymbol NoSymbol
+keysym 0x33 = 3 numbersign numbersign NoSymbol NoSymbol
+keysym 0x32 = 2 at at NoSymbol NoSymbol
+keysym 0x31 = 1 exclam exclam NoSymbol NoSymbol
+
+
+
+! execute: xmodmap ~/.keyboardBindings
+

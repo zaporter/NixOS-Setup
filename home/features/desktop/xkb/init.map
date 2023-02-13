@@ -1,0 +1,13 @@
+! remove Caps Lock
+clear lock
+remove Lock = Caps_Lock
+remove Shift = Caps_Lock
+! add Mode_switch
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch
+
+! Shift
+
+keysym s = s S Shift_L Shift_L NoSymbol NoSymbol
+
+! execute: xmodmap ~/.keyboardBindings
