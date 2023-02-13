@@ -48,6 +48,9 @@ in
     ../common/users/zack
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  # nixos on framework 12th gen
+  #boot.kernelParams = ["module_blacklist=hid_sensor_hub"]
 
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
@@ -104,6 +107,7 @@ in
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.xterm.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
