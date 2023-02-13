@@ -1,9 +1,11 @@
 {config,inputs, pkgs, ...}: {
+    nixpkgs.config.allowUnfree = true;
     imports = [
         ./global    
         ./features/desktop
         ./features/desktop/i3
         ./features/extended
+        ./features/rust
     ];
     #monitors = [
     #    {
