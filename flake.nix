@@ -39,6 +39,13 @@
           ./home/helicon.nix
         ];
       };
+      "zack@rama" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/rama.nix
+        ];
+      };
       
     };
     nixosConfigurations = {
@@ -52,6 +59,12 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/helicon
+        ];
+      };
+      rama = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/rama
         ];
       };
     };
