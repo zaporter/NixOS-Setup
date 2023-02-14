@@ -5,8 +5,9 @@
         ./features/desktop
         ./features/desktop/i3
         ./features/extended
-        ./features/rust
+        ./features/lang
         ./features/work
+        ./features/images
     ];
     #monitors = [
     #    {
