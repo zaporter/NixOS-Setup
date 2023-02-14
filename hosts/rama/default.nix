@@ -51,7 +51,6 @@ in
   boot.kernelPackages = pkgs.linuxPackages_6_1;
   # nixos on framework 12th gen
   #boot.kernelParams = ["module_blacklist=hid_sensor_hub"]
-
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
   programs.steam.enable = true;
@@ -64,6 +63,7 @@ in
   nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem
     pkg.pname [
       "cnijfilter2"
+      "steam-run"
     ]
   );
   virtualisation.docker.enable = true;
@@ -74,10 +74,15 @@ in
     WaylandEnable=true
     DefaultSession=sway
   '';
+  #systemd.targets.sleep.enable = false;
+  #systemd.targets.suspend.enable = false;
+  #systemd.targets.hibernate.enable = false;
+  #systemd.targets.hybrid-sleep.enable = false;
 
   programs.zsh.enable = true;
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -94,7 +99,8 @@ in
   # Enable networking
   networking.networkmanager.enable = true;
 
-
+  # Enable automatic Upgrades
+  system.autoUpgrade.enable = true;
 
   fonts = {
     enableDefaultFonts = true;
@@ -175,6 +181,7 @@ in
     gdk-pixbuf-xlib
     alacritty
     sway
+    steam-run
     home-manager
     docker
     i3
