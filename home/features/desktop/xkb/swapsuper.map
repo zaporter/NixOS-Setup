@@ -1,0 +1,2 @@
+keysym Super_L = Alt_L Alt_L Alt_L Alt_L
+keysym Alt_L = Super_L Super_L Super_L Super_L

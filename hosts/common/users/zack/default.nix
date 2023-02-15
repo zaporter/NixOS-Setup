@@ -11,6 +11,7 @@ in
       "video"
       "audio"
     ] ++ ifTheyExist [
+      "clamav"
       "network"
       "networkmanager"
       "libvirtd"

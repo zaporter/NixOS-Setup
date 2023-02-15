@@ -3,6 +3,7 @@
     imports = [
       ./go
       ./rust
+      ./python
     ];
     home.packages = with pkgs; [
     ];

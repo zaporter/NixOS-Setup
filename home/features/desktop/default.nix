@@ -15,5 +15,6 @@
     acpi # to read battery
     pulseaudio
     playerctl
+    shutter # screenshots
   ];
 }
