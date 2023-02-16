@@ -20,6 +20,7 @@
     calc
     gnumake
     less
+    tree
     
   ];
 
