@@ -13,7 +13,7 @@ keysym l = l L Right Right lstroke Lstroke
 
 keysym semicolon = semicolon colon BackSpace NoSymbol NoSymbol NoSymbol
 
-keysym e = e E equal NoSymbol NoSymbol
+keysym o = o O equal NoSymbol NoSymbol
 keysym q = q Q exclam NoSymbol NoSymbol
 keysym p = p P plus NoSymbol NoSymbol
 keysym d = d D parenleft Control_L NoSymbol
@@ -28,7 +28,6 @@ keysym z = z Z Escape NoSymbol NoSymbol
 keysym u = u U underscore Next NoSymbol
 keysym y = y Y NoSymbol Home NoSymbol
 keysym i = i I colon Prior NoSymbol
-keysym o = o O NoSymbol End NoSymbol
 ! keysym BackSpace = NoSymbol NoSymbol NoSymbol NoSymbol
 
 ! PUNCTUATION

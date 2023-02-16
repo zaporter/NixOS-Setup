@@ -8,6 +8,7 @@ programs.zsh = {
   shellAliases = {
   #  ll = "ls -l";
   #  update = "sudo nixos-rebuild switch";
+    xkeymap = "~/setup/scripts/Xkeymap.sh";
     c = "cd";
     ls = "exa";
     update-home = "~/setup/scripts/Switch-home";
