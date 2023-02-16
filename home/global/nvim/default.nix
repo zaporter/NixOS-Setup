@@ -16,6 +16,7 @@ with lib; {
         vimPlugins.coc-nvim
         vimPlugins.coc-rust-analyzer
         vimPlugins.coc-go
+        vimPlugins.coc-pyright
         vimPlugins.nvim-tree-lua
         rust-analyzer
       ];
