@@ -1,6 +1,7 @@
 {config,inputs, pkgs, ...}: {
     imports = [
         ./global    
+        ./global/git/zaporter.nix
         ./features/desktop
         ./features/extended
     ];

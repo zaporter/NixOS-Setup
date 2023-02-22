@@ -2,6 +2,7 @@
     nixpkgs.config.allowUnfree = true;
     imports = [
         ./global    
+        ./global/git/zaporter-work.nix
         ./features/desktop
         ./features/desktop/i3
         ./features/extended
@@ -9,6 +10,7 @@
         ./features/work
         ./features/images
     ];
+
     #monitors = [
     #    {
     #      name = "DP-1";
