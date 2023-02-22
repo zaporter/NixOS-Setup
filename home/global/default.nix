@@ -21,6 +21,8 @@
     gnumake
     less
     tree
+    # devel
+    gitui
     
   ];
 

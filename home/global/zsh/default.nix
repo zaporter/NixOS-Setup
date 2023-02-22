@@ -13,6 +13,7 @@ programs.zsh = {
     ls = "exa";
     update-home = "~/setup/scripts/Switch-home";
     update-nixos = "~/setup/scripts/Switch-nixos";
+    replacebinbash = "~/setup/scripts/ReplaceBinBash.sh";
   };
   history = {
     size = 10000;
