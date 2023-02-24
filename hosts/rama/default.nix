@@ -115,6 +115,13 @@ in
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.desktopManager.xterm.enable = true;
 
+  services.syncthing = {
+        enable = true;
+        user = "zack";
+        dataDir = "/home/zack/Documents";    # Default folder for new synced folders
+        configDir = "/home/zack/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+
   # Configure keymap in X11
   services.xserver = {
     enable = true;
