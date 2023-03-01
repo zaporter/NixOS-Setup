@@ -23,6 +23,7 @@
     ./i3status
     ./rofi
     ./xkb
+    ./kanshi
   ];
   config = {
   home.extraOutputsToInstall = [ "doc" "info" "man" "devdoc" ];

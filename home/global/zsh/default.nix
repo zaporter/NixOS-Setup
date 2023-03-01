@@ -3,6 +3,9 @@
 xdg.configFile."zsh/env".text = ''
   ${builtins.readFile ./env}
 '';
+home.packages = [
+    pkgs.thefuck
+];
 programs.zsh = {
   enable = true;
   shellAliases = {
