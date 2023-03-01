@@ -36,7 +36,6 @@
     homeManagerConfigurations = {
       "zack@trantor" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        allowUnfree = true;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/trantor.nix

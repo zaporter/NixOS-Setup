@@ -1,10 +1,15 @@
-{pkgs, ...}:
+{pkgs, lib, config,  ...}:
 
+  with lib; let 
+    cfg = config.zp;
+  in  
 {
-  home.packages = [
-    pkgs.rofi
-  ];
-  #xdg.configFile."alacritty/alacritty.yml".text = ''
-  #  ${builtins.readFile ./alacritty.yml}
-  #'';
+  home.packages = (
+    if (cfg.wayland.enable)
+        then [pkgs.rofi-wayland] else [pkgs.rofi]
+  );
+  xdg.configFile.rofi = {
+      source = ./config;
+      recursive = true;
+  };
 }

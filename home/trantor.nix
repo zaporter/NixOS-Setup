@@ -1,9 +1,15 @@
-{config,inputs, pkgs, ...}: {
+{config,inputs, pkgs, ...}: 
+{
+    config.zp.stress.enable = true;
+    config.zp.wayland.enable = true;
+    
     imports = [
         ./global    
         ./global/git/zaporter.nix
         ./features/desktop
         ./features/extended
+        ./features/lang
+        ./features/work
     ];
     #monitors = [
     #    {

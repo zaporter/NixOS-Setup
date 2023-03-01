@@ -48,6 +48,12 @@ in
     ../common/users/zack
     ../common/optional/nvidia.nix
   ];
+  #boot.loader.grub = {
+  #  enable = true;
+  #  version = 2;
+  #  device = "/dev/nvme0n1";
+  #  useOSProber = true;
+  #};
 
 
   services.printing.enable = true;
@@ -58,6 +64,7 @@ in
     WLR_NO_HARDWARE_CURSORS = "1";
     WLR_RENDERER = "vulkan";
   };
+  virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem
     pkg.pname [
@@ -170,9 +177,9 @@ in
     libpng
     gdk-pixbuf-xlib
     alacritty
-    sway
     home-manager
     i3
+    os-prober
     dbus-sway-environment
     configure-gtk
     discord
@@ -193,7 +200,7 @@ in
   # enable sway window manager
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+  #  wrapperFeatures.gtk = true;
     extraOptions = [ "--unsupported-gpu" ];
   };
 
