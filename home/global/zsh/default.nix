@@ -21,7 +21,7 @@ programs.zsh = {
   };
   oh-my-zsh = {
     enable = true;
-    plugins = [ "git" "z" "docker" ];
+    plugins = [ "git" "z" "docker" "thefuck" ];
     theme = "robbyrussell";
   };
 };
