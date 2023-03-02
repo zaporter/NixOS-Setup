@@ -4,6 +4,7 @@
   imports = [
     ./nvim
     ./zsh
+    ./ssh
   ];
   home.packages = with pkgs; [
     # core

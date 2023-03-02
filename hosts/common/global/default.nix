@@ -9,9 +9,9 @@
  #   useUserPackages = true;
  #   extraSpecialArgs = { inherit inputs outputs; };
  # };
+  programs.ssh.startAgent = true;
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
     };

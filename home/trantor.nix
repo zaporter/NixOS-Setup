@@ -5,7 +5,7 @@
     
     imports = [
         ./global    
-        ./global/git/zaporter.nix
+        ./global/git/zaporter-work.nix
         ./features/desktop
         ./features/extended
         ./features/lang

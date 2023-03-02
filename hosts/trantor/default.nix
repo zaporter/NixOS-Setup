@@ -154,10 +154,8 @@ in
   # services.xserver.libinput.enable = true;
 
   # https://gist.github.com/Strum355/8e0c63d662f297ce23654e763bd4c6af
-  nixpkgs.overlays = [
     #(import ./electron/wayland-overlay.nix)
     #(import ./discord/wayland-overlay.nix)
-  ];
   # enable brightness controls
   programs.light.enable = true;
   virtualisation.virtualbox.host.enable = true;

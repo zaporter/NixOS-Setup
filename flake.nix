@@ -6,32 +6,47 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixneovim.url = "github:nixneovim/nixneovim";
     nixneovim.inputs.nixpkgs.follows = "nixpkgs";
+    nur = {
+     url = "github:nix-community/nur";
+    };
+    
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    homeage = {
+      url = "github:jordanisaacs/homeage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #secrets = {
+    #  url = "git+ssh://git@github.com/zaporter/secrets.git?ref=main";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
-  outputs = { self,nixpkgs, home-manager, nixneovim, ... }@inputs: 
+
+  outputs = { self, nur, nixpkgs, home-manager, nixneovim, ... }@inputs: 
   let
     inherit (self) outputs;
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    #nixpkgs.overlays = [
-     #     nixneovim.overlays.default
-
-    #];
+    inherit 
+        (import ./overlays { inherit inputs outputs;})
+        overlays
+        ;
     pkgs = import nixpkgs {
-      inherit system;
+      inherit system overlays;
       config = { allowUnfree = true; };
-      #overlays = [
-
-          #nixneovim.overlays.default
-      #];
     };
   in {
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
     templates = import ./templates;
-    overlays = import ./overlays { inherit inputs outputs; };
     packages = import ./pkgs {inherit pkgs;};
     devShells = import ./shell.nix {inherit pkgs;};
     formatter = pkgs.nixpkgs-fmt;
+
 
     homeManagerConfigurations = {
       "zack@trantor" = home-manager.lib.homeManagerConfiguration {

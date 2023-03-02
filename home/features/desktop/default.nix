@@ -24,12 +24,12 @@
     ./rofi
     ./xkb
     ./kanshi
+    ./firefox
   ];
   config = {
   home.extraOutputsToInstall = [ "doc" "info" "man" "devdoc" ];
   home.packages = with pkgs; [
     wdisplays
-    firefox
     bitwarden
     wev
     acpi # to read battery

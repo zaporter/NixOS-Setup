@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eux
 pushd ~/setup
-nix build .#homeManagerConfigurations."`whoami`@`hostname`".activationPackage
+nix build --show-trace .#homeManagerConfigurations."`whoami`@`hostname`".activationPackage
 ./result/activate
 popd
