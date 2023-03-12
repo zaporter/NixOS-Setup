@@ -36,6 +36,7 @@
     pulseaudio
     playerctl
     shutter # screenshots
+    brightnessctl
   ] ++ (
     if (cfg.stress.enable)
         then [stress] else []
