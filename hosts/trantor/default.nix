@@ -177,6 +177,7 @@ in
     alacritty
     home-manager
     i3
+    slack
     os-prober
     dbus-sway-environment
     configure-gtk

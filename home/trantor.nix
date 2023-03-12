@@ -11,6 +11,9 @@
         ./features/lang
         ./features/work
     ];
+#    home.packages = [
+#        pkgs.slack
+#    ];
     #monitors = [
     #    {
     #      name = "DP-1";

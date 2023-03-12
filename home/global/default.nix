@@ -7,6 +7,7 @@
     ./ssh
   ];
   home.packages = with pkgs; [
+    nix-index
     # core
     lshw
     zip

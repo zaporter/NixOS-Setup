@@ -19,6 +19,7 @@ with lib; {
         vimPlugins.coc-pyright
         vimPlugins.coc-prettier
         vimPlugins.nvim-tree-lua
+        vimPlugins.cmp-copilot
         rust-analyzer
       ];
       #defaultEditor = true;

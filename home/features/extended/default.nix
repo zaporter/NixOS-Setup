@@ -7,8 +7,8 @@
         chromium
         bitwarden
         signal-desktop
-        transmission
 
+        qbittorrent
     ];
 
 }

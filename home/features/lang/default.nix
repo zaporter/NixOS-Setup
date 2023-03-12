@@ -4,6 +4,7 @@
       ./go
       ./rust
       ./python
+      ./std
     ];
     home.packages = with pkgs; [
     ];
