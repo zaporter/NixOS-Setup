@@ -2,26 +2,25 @@
 
 # DRAWN FROM
 # https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/installer/cd-dvd/
+# and 
+# https://hoverbear.org/blog/nix-flake-live-media/
 
 {
   imports = [
     ../common/global
     ../common/users/zack
-    ./all-hardware.nix
   ];
-  #boot.loader.grub = {
-  #  enable = true;
-  #  version = 2;
-  #  device = "/dev/nvme0n1";
-  #  useOSProber = true;
-  #};
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   networking.hostName = "iso"; # Define your hostname.
+  # Disable wireless because we use networkmanager
+  networking.wireless.enable = false;
+  systemd.services.sshd.wantedBy = lib.mkOverride 40 [ "multi-user.target" ];
+
+  users.users.zack = {
+    password = "changeme";
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -36,27 +35,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  # ISO naming.
-  isoImage.isoName = "${config.isoImage.isoBaseName}-${config.system.nixos.label}-${pkgs.stdenv.hostPlatform.system}.iso";
-
-  # EFI booting
-  isoImage.makeEfiBootable = true;
-
-  # USB booting
-  isoImage.makeUsbBootable = true;
-
-  # Add Memtest86+ to the CD.
-  boot.loader.grub.memtest86.enable = true;
-
-  # An installation media cannot tolerate a host config defined file
-  # system layout on a fresh machine, before it has been formatted.
-  #swapDevices = mkImageMediaOverride [ ];
-  #fileSystems = mkImageMediaOverride config.lib.isoFileSystems;
-
-  isoImage.edition = lib.mkForce "minimal";
-
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -19,6 +19,7 @@
       url = "github:jordanisaacs/homeage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos.url = "github:nixos/nixpkgs/nixos-22.11";
 
     #secrets = {
     #  url = "git+ssh://git@github.com/zaporter/secrets.git?ref=main";
@@ -26,7 +27,7 @@
     #};
   };
 
-  outputs = { self, nur, nixpkgs, home-manager, nixneovim, ... }@inputs: 
+  outputs = { self, nixos, nur, nixpkgs, home-manager, nixneovim, ... }@inputs: 
   let
     inherit (self) outputs;
     system = "x86_64-linux";
@@ -95,6 +96,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/iso
+          "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ];
       };
     };
