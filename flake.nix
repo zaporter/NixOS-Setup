@@ -91,6 +91,12 @@
           ./hosts/rama
         ];
       };
+      iso = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/iso
+        ];
+      };
     };
   };
 
