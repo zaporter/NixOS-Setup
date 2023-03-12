@@ -10,6 +10,7 @@
  #   extraSpecialArgs = { inherit inputs outputs; };
  # };
   programs.ssh.startAgent = true;
+  services.nscd.enable = true;
 
   nixpkgs = {
     config = {
