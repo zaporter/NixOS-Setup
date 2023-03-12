@@ -9,8 +9,15 @@
   programs.zsh.enable = true;
 
   # local device discovery
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi = {
+    enable = true;
+    publish = {
+        enable = true;
+        addresses = true;
+        workstation = true;
+    };
+    nssmdns = true;
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
